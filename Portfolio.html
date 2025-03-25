@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/watercolor-colorful-butterfly-background_23-2150146459.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center center; 
+            background-attachment: fixed;
+            height: 100vh; 
+            margin: 0;
+            color: rgb(16, 16, 16); 
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        header {
+            background: linear-gradient(to right, #d86ad6, #ce4294);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: white(131, 123, 123);
+            animation: slideDown 2s ease-out;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            margin: 0 15px;
+            color: rgb(57, 52, 52);
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            color: #8d1671;
+        }
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        #intro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            text-align: center;
+        }
+        #intro .card {
+            background: #717171;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        #intro h2 {
+            margin-top: 0;
+        }
+        #intro button {
+            background: #2d2a2d;
+            color: rgb(229, 210, 210);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        #intro button:hover {
+            background: #1d1c1d;
+        }
+        #projects {
+            padding: 40px 20px;
+            background: #bfacac;
+        }
+        #projects h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .project-card {
+            background: #8c7979;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(221, 123, 123, 0.988);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background: linear-gradient(to right, #d86ad6, #ce4294);
+            color: rgb(255, 244, 244);
+            padding: 20px;
+            text-align: center;
+        }
+        #skills {
+            padding: 40px 20px;
+            background: #8c7979;
+        }
+        #skills h2 {
+            text-align: center ;
+            margin-bottom: 20px;
+        }
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .skills-card {
+            background: #c064ba;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .skill-card:hover {
+            transform: scale(1.05);
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: rgb(27, 24, 24);
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #f6f3e9;
+            animation: bounce 0.5s;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        body.dark-mode {
+            background-color: #9a99a2;
+            color: #070303;
+        
+        }
+        header.dark-mode {
+            background: linear-gradient(to right, #333, #ddc8c8);
+        }
+        .project-card.dark-mode {
+            background: #333;
+        }
+        footer.dark-mode {
+            background: #94969a;
+        }
+        #scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: none;
+            background: #acbb5e;
+            color: rgb(19, 17, 17);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        #scroll-to-top:hover {
+            background: #a7a9e0;
+        }
+        #contact ul{
+            list-style-type:none;
+            padding:0;
+        }
+        #contact h2{
+            font-size: 20px;
+            color: #151212;
+            font-family: 'arial', sans-serif;
+            margin-bottom: 20px;
+            font-weight: bold;
+
+        }
+        #contact a {
+            color:#d10505;
+            font-size: 18px;
+            text-decoration:none;
+            font-family: 'arial', sans-serif;
+            transition: color 0.3s ease;
+        }
+        #contact a:hover{
+            color: #9a99a2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section id="intro">
+        <div class="card">
+            <h2>About Me</h2>
+            <p>Hello! I'm Jocelyn Varona, Showcase my skills, experiences, and accomplishments.</p>
+            <button onclick="toggleDarkMode()">Dark Mode</button>
+        </div>
+    </section>
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills">
+            <div class="skill">
+                <h3>HTML</h3>
+                <p>Expert in creating clean, semantic HTML structures.</p>
+            </div>
+            <div class="skill">
+                <h3>CSS</h3>
+                <p>Skilled in styling websites to make them visually appealing and responsive.</p>
+            </div>
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <p>Experienced in creating dynamic, interactive features on web pages.</p>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Project 1</h3>
+                <a href="EduNews/EduNews.html">EDUNEWS<p>Description of project 1.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 2</h3>
+                <a href="landing/landing.html">LANDING<p>Description of project 2.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 3</h3>
+                <a href="Technical page/technical.html">TECHNICAL<p>Description of project 3.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 4</h3>
+                <a href="piano.html">PIANO<p>Description of project 4.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 5</h3>
+                <a href="Cat.html">CAT<p>Description of project 5.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 6</h3>
+                <a href="Camper Cafe.html">CAMPER CAFE<p>Description of project 6.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 7</h3>
+                <a href="registration.html">REGISTRATION<p>Description of project 7.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 8</h3>
+                <a href="Survey.html">SURVEY<p>Description of project 8.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 9</h3>
+                <a href="Painting.html">PAINTING<p>Description of project 9.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 10</h3>
+                <a href="PhotoGallery.html">PHOTOGALLERY<p>Description of project 10.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 11</h3>
+                <a href="Nutritionlabel.html">NUTRITIONLABEL<p>Description of project 11.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 12</h3>
+                <a href="Quiz.html">QUIZ<p>Description of project 12.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 13</h3>
+                <a href="Tribute.html">TRIBUTE<p>Description of project 13.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 14</h3>
+                <a href="Balancesheet.html">BALANCESHEET<p>Description of project 14.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 15</h3>
+                <a href="Cat Painting.html">CAT PAINTING<p>Description of project 15.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 16</h3>
+                <a href="City Skyline.html">CITY SKYLINE<p>Description of project 16.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 17</h3>
+                <a href="Ferris wheel.html">FERRIS WHEEL<p>Description of project 17.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 18</h3>
+                <a href="Penguin.html">PENGUIN<p>Description of project 18.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 19</h3>
+                <a href="ColorMarker.html">COLOR<p>Description of project 19.</p></a>
+            </div>
+            <div class="project-card">
+                <h3>Project 20</h3>
+                <a href="Magazine.html">MAGAZINE<p>Description of project 20.</p></a>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <p>&copy; 2024 VARONA. </p>
+        <div class="social-links">
+            <a href="#facebook">Facebook</a>
+            <a href="#twitter">Twitter</a>
+            <a href="#linkedin">LinkedIn</a>
+        </div>
+    </footer>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch, please feel free to reach out!</p>
+        <ul>
+            <li><a href="https://www.facebook.com/jocelyn.varona.50" target="_blank">Visit Our Facebook Page</a></li>
+            <li><a href="https://mail.google.com/mail/u/0/#inbox">Send an email</a></li>
+            <li><a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F_imvrn%3Figsh%3DMXUwbWowNGc1YWRlNQ%253D%253D%26fbclid%3DIwZXh0bgNhZW0CMTAAAR09jA1oaEk9XxgvnJkyWhHHjC8IqLYLUaSnHXCqPiu9FSqfwgx4TBs6X1s_aem_d0OKpBBEVa8K-ydnAN2sUA&h=AT2hfp-2wjDo_jx5uh4l20TdbAEYWeWaoVt_3nEzdC9QwwgwQMZzU8rRf3OvzDPSt0LYFvSEd2TFM5MKnls_DwCBVI7ECOOf4OtumsvY-URXPNnViP8C0HL5TKNo_ciWT0pccA" target="_blank">Follow Me on My Instagram</a></li>
+            <li>Phone: 09633987034</li>
+        </ul>
+    </section>
+    <button id="scroll-to-top" onclick="scrollToTop()">↑</button>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            document.querySelector('header').classList.toggle('dark-mode');
+            document.querySelectorAll('.project-card').forEach(card => card.classList.toggle('dark-mode'));
+            document.querySelector('footer').classList.toggle('dark-mode');
+        }
+
+        window.onscroll = function() {
+            const scrollToTopButton = document.getElementById('scroll-to-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopButton.style.display = 'block';
+            } else {
+                scrollToTopButton.style.display = 'none';
+            }
+        };
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>
